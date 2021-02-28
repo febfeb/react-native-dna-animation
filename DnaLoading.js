@@ -41,8 +41,8 @@ class DnaBall extends React.Component {
         }
 
         this.inputRangeZIndex = [0, 90, 180, 270, 360];
-        this.outputRangeZIndex = [0, 1, 2, 1, 0];
-        this.outputRangeZIndex2 = [2, 1, 0, 1, 2];
+        this.outputRangeZIndex = [0, 0, 100, 0, 0];
+        this.outputRangeZIndex2 = [100, 0, 0, 0, 2];
     }
 
     componentDidMount() {
@@ -88,6 +88,7 @@ class DnaBall extends React.Component {
                                 extrapolate: 'clamp',
                             })
                         },
+                        { perspective: 1000 }
                     ],
                     zIndex: this.rotation.interpolate({
                         inputRange: this.inputRangeZIndex,
@@ -117,6 +118,7 @@ class DnaBall extends React.Component {
                                 extrapolate: 'clamp',
                             })
                         },
+                        { perspective: 1000 }
                     ],
                     zIndex: this.rotation.interpolate({
                         inputRange: this.inputRangeZIndex,
@@ -158,7 +160,8 @@ const styles = StyleSheet.create({
     box: {
         height: 30,
         width: 30,
-        marginHorizontal: 10
+        marginHorizontal: 10,
+        zIndex: 1
     },
     circle: {
         width: 30,
